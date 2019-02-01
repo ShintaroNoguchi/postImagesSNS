@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Laravel</title>
+        <title>SNS</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -16,13 +16,19 @@
     <body>
         <header>
             <table>
-                <tr>
-                @if(Auth::check())
-                <td>ホーム</td><td>ログアウト</td><td>投稿</td>
-                @else
-                <td>ホーム</td><td>ログイン</td><td>投稿</td>
-                @endif
-                </tr>
+                <tbody>
+                    <tr>
+                        <td><a href="{{ url('/') }}">ホーム</a></td>
+                        <td>
+                            @if(Auth::check())
+                            <a href="{{ url('/logout') }}">ログアウト</a>
+                            @else
+                            <a href="{{ url('/login') }}">ログイン</a>
+                            @endif
+                        </td>
+                        <td><a href="{{ url('/post') }}">投稿</a></td>
+                    </tr>
+                </tbody>
             </table>
         </header>
         @yield('content')
