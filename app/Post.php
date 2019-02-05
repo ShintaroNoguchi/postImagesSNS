@@ -27,9 +27,9 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
-    //従テーブル(favoritesテーブル)とhasMany結合
-    public function favorites() {
-        return $this->hasMany('App\Favorite');
+    //従テーブル(likesテーブル)とhasMany結合
+    public function likes() {
+        return $this->hasMany('App\Like');
     }
 
     //Userからnameを取得
@@ -40,17 +40,21 @@ class Post extends Model
     //ログインしているユーザがその投稿に対していいねしたかチェックする関数
     //既にいいねした場合はtrueを、まだの場合はfalseを返す
     public function isLiked() {
-        $ownFavorite = 0;
+        $own_like = 0;
 
-        foreach ($this->favorites as $obj) {
-            if ($obj['user_id'] == $this->user_id) {
-                $ownFavorite = 1;
+        foreach ($this->likes as $like) {
+            if ($like['user_id'] == $this->user_id) {
+                $own_like = 1;
                 break;
             }
         }
 
-        if ($ownFavorite == 1) return true;
+        if ($own_like == 1) return true;
         else return false;
     }
 
+    //その投稿に対するいいねの数を返す関数
+    public function countLikes() {
+        return $this->likes()->count();
+    }
 }

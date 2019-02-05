@@ -7,7 +7,7 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td><span>{{ $post->getName() }}</span></td>
+                            <td><a href="/profile?id={{ $post->user_id }}" class="user_name">{{ $post->getName() }}</a></td>
                             <td>
                                 @if(Auth::check())
                                     <a href="/delete?id={{ $post->id }}" class="delete_btn">投稿を削除</a>
@@ -21,12 +21,20 @@
                             <td>
                                 @if(Auth::check())
                                     @if($post->isLiked())
-                                        いいねした
+                                        <form action="/dislike" method="post">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                            <input type="image" src="/img/likeButton/star_yellow.png" alt="いいねボタン">
+                                        </form>
                                     @else
-                                        いいねしてない
+                                        <form action="/like" method="post">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                            <input type="image" src="/img/likeButton/star_gray.png" alt="いいね（未）ボタン">
+                                        </form>
                                     @endif
                                 @else
-                                    ★(未ログイン)
+                                    <img src="/img/likeButton/star_nonActive.png">
                                 @endif
                             </td>
                         </tr>

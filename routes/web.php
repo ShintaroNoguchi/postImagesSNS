@@ -32,8 +32,13 @@ Route::get('/logout', 'Auth\LogoutController@index');
 //ホーム画面
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
-Route::get('/delete', 'HomeController@delete');
+Route::get('/delete', 'HomeController@delete')->middleware('auth');
+Route::post('/like', 'HomeController@like')->middleware('auth');
+Route::post('/dislike', 'HomeController@dislike')->middleware('auth');
 
 //投稿画面
 Route::get('/post', 'PostController@index')->middleware('auth');
 Route::post('/post', 'PostController@post')->middleware('auth');
+
+//プロフィール画面
+Route::get('/profile', 'ProfileController@index');
