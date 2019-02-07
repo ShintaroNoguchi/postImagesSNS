@@ -1,5 +1,9 @@
 @extends('layouts.base')
 
+@section('css')
+    <link href="" rel="stylesheet" type="text/css">
+@endsection
+
 @section('content')
     @if(count($posts) > 0)
         @foreach ($posts as $post)
@@ -17,7 +21,7 @@
                         <tr><td><img src="data:image/png;base64,{{ $post->image }}"></td></tr>
                         <tr><td><span>{{ $post->comment }}</span></td></tr>
                         <tr>
-                            <td>いいねしたユーザ</td>
+                            <td><a href="/like-list?id={{ $post->id }}" class="like_list">いいねしたユーザ</a></td>
                             <td>
                                 @if(Auth::check())
                                     @if($post->isLiked())

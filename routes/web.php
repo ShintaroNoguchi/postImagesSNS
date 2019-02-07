@@ -42,3 +42,6 @@ Route::post('/post', 'PostController@post')->middleware('auth');
 
 //プロフィール画面
 Route::get('/profile', 'ProfileController@index');
+
+//いいねしたユーザ一覧画面
+Route::get('/like-list', 'LikeListController@index');
