@@ -18,17 +18,7 @@ class LikeListController extends Controller
 
         //その投稿に対するいいねの情報を全件取得
         $likes = Like::where('post_id', $request->id)->get();
-/*
-        $cnt = 0;
-        foreach ($likes as $like) {
-            if($cnt == 0) $cnt++;
-            else exit();
 
-            var_dump($like->user());
-        }
-
-exit();
-*/
         return view('like_list', ['likes' => $likes]);
     }
 }
