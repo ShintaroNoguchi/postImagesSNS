@@ -1,24 +1,33 @@
 @extends('layouts.base')
 
+@section('css')
+    <link href="/css/post.css" rel="stylesheet" type="text/css">
+@endsection
+
 @section('content')
-    @if (count($errors) > 0)
-        <div>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <table>
-        <tbody>
+    <div class="form">
+        <div class="formContainer">
             <form action="/post" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                <tr><td><input type="file" class="form-control" name="image"></td></tr>
-                <tr><td><textarea name="comment">{{ old('comment') }}</textarea></td></tr>
-                <tr><td><input type="submit" value="投稿"></td></tr>
+                <div class="inputContainer first">
+                    <p class="title">画像</p>
+                    @if ($errors->has('image'))
+                        <p class="error">{{ $errors->first('image') }}</p>
+                    @endif
+                    <input type="file" class="form-control file" name="image">
+                </div>
+                <div class="inputContainer">
+                    <p class="title">コメント(200字まで)</p>
+                    @if ($errors->has('comment'))
+                        <p class="error">{{ $errors->first('comment') }}</p>
+                    @endif
+                    <textarea class="comment" name="comment">{{ old('comment') }}</textarea>
+                </div>
+                <div class="inputContainer">
+                    <input type="submit" class="submitBtn" value="投稿">
+                </div>
             </form>
-        </tbody>
-    </table>
+        </div>
+    </div>
 @endsection

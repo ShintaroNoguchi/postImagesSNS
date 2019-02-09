@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -15,10 +16,10 @@ class PostController extends Controller
     }
 
     //投稿処理
-    public  function post(Request $request)
+    public  function post(PostRequest $request)
     {
         //バリデーション処理
-        $this->validate($request, Post::$rules);
+        //$this->validate($request, Post::$rules);
 
         //DBに投稿を保存
         $post = new Post;

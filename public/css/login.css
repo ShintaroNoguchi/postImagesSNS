@@ -1,0 +1,41 @@
+body {
+    background: #f5f5f5;
+}
+
+#content {
+    max-width: 800px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 55px 0 0 0;
+}
+
+.loginContainer {
+    width: 100%;
+    min-width: 300px;
+    margin: 0;
+    padding: 4% 5%;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.loginBtnContainer {
+
+}
+
+.loginBtn {
+    padding: 5px 15px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #ebebeb;
+    font-size: 23px;
+    font-weight: bold;
+    color: #484848;
+    text-decoration: none !important;
+}
+.loginBtn:hover {
+    color: #484848;
+    background: #bbbbbb;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}

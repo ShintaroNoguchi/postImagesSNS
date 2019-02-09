@@ -7,6 +7,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
+        <link href="/css/login.css" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
@@ -14,6 +15,10 @@
         </style>
     </head>
     <body>
-        <a href="/login/github">githubアカウントでログイン</a>
+        <div id="content">
+            <div class="loginContainer">
+                <a class="loginBtn" href="/login/github">githubアカウントでログイン</a>
+            </div>
+        </div>
     </body>
 </html>

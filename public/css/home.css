@@ -44,9 +44,20 @@
   box-shadow: inset 0 0 0 1px #ebebeb;
 }
 .post .deleteBtn {
+  float: right;
+  padding: 3px 10px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #ebebeb;
   font-size: 17px;
   text-decoration: none;
   color: #757575;
+}
+.post .deleteBtn:hover {
+  background: #bbbbbb;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .post .trashIcon {
   margin: 3px 3px 8px 0;

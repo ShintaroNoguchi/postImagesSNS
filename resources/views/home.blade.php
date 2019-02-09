@@ -11,11 +11,9 @@
                 <div class="postContainer">
                     <div class="upperContainer">
                         <div class="nameContainer"><a class="name" href="/profile?id={{ $post->user_id }}" class="user_name">{{ $post->getName() }}</a></div>
-                        <div class="deleteBtnContainer">
-                            @if(Auth::check())
-                                <a class="deleteBtn" href="/delete?id={{ $post->id }}" class="delete_btn"><img class="trashIcon" src="/img/trash.png">投稿を削除</a>
-                            @endif
-                        </div>
+                        @if(Auth::check())
+                            <a class="deleteBtn" href="/delete?id={{ $post->id }}" class="delete_btn"><img class="trashIcon" src="/img/trash.png">投稿を削除</a>
+                        @endif
                     </div>
                     <img class="image" src="data:image/png;base64,{{ $post->image }}">
                     <div class="lowerContainer">
