@@ -22,7 +22,12 @@ class HomeController extends Controller
         $this->validate($request, Post::$delete_rules);
 
         $post = Post::where('id', $request->id)->where('user_id', Auth::user()->id)->first();
-        if (isset($post)) $post->delete();
+        if (isset($post)) {
+            $post->delete();
+
+            //投稿に紐づいているいいねを削除
+            Like::where('post_id', $request->id)->delete();
+        }
 
         return redirect('/');
     }
