@@ -123,6 +123,19 @@
 }
 
 
+/* ページネーション */
+ul.pagination {
+    width: 250px;
+    margin: 20px auto;
+}
+ul.pagination li {
+    margin: 0 auto;
+}
+ul.pagination li.disabled {
+    visibility: hidden;
+}
+
+
 /*680px以下で適用する内容*/
 @media screen and (max-width:680px){
     .post .lowerContainer > div.comment {

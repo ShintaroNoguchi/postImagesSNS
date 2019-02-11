@@ -9,11 +9,6 @@
         <link href="/css/app.css" rel="stylesheet" type="text/css">
         <link href="/css/base.css" rel="stylesheet" type="text/css">
         @yield('css')
-
-        <!-- Styles -->
-        <style>
-
-        </style>
     </head>
     <body>
         <header id="header">
