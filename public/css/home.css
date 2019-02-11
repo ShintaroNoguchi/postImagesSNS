@@ -1,158 +1,178 @@
 /* 投稿がない場合のメッセージ */
 #none {
-  margin: 100px 0 0 0;
-  text-align: center;
-  line-height: 60px;
-  font-size: 23px;
-  font-weight: bold;
-  color: #484848;
+    margin: 100px 0 0 0;
+    text-align: center;
+    line-height: 60px;
+    font-size: 23px;
+    font-weight: bold;
+    color: #484848;
 }
 
 
 /* 投稿全体 */
 .post {
-  width: 100%;
-  margin: 20px 0 0 0;
+    width: 100%;
+    margin: 20px 0 0 0;
 }
 .post .postContainer {
-  min-width: 300px;
-  margin: 0 10px;
-  padding: 4% 5%;
-  border-radius: 6px;
-  background: #fff;
+    min-width: 300px;
+    margin: 0 10px;
+    padding: 4% 5%;
+    border-radius: 6px;
+    background: #fff;
 }
 
 /* 上段 */
 .post .upperContainer {
-  height: auto;
-  overflow: hidden;
+    height: auto;
+    overflow: hidden;
 }
 .post .upperContainer > div.nameContainer {
-  float: left;
+    float: left;
 }
 .post .name {
-  line-height: 35px;
-  font-size: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #484848;
+    line-height: 35px;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #484848;
+}
+.post .name:hover {
+    opacity: 0.7;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 .post .upperContainer > div.deleteBtnContainer {
-  float: right;
-  padding: 3px 10px;
-  border-radius: 12px;
-  box-shadow: inset 0 0 0 1px #ebebeb;
+    float: right;
+    padding: 3px 10px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #ebebeb;
 }
 .post .deleteBtn {
-  float: right;
-  padding: 3px 10px;
-  border-radius: 12px;
-  box-shadow: inset 0 0 0 1px #ebebeb;
-  font-size: 17px;
-  text-decoration: none;
-  color: #757575;
+    float: right;
+    padding: 3px 10px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #ebebeb;
+    font-size: 17px;
+    text-decoration: none;
+    color: #757575;
 }
 .post .deleteBtn:hover {
-  background: #bbbbbb;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+    background: #bbbbbb;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 .post .trashIcon {
-  margin: 3px 3px 8px 0;
+    margin: 3px 3px 8px 0;
 }
 
 /* 中段 */
 .post .image {
-  width: 100%;
-  margin: 3% 0 0 0;
-  border: solid 1px #ebebeb;
-  border-radius: 10px;
-  object-fit: cover;
-  object-position: 0 100%;
+    width: 100%;
+    margin: 3% 0 0 0;
+    border: solid 1px #ebebeb;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: 0 100%;
 }
 
 /* 下段 */
 .post .lowerContainer {
-  margin: 2% 0 0 0;
-  overflow: hidden;
-  position: relative;
+    margin: 2% 0 0 0;
+    overflow: hidden;
+    position: relative;
 }
 .post .lowerContainer > div.comment {
-  width: 80%;
-  min-height: 65px;
-  float: left;
+    width: 80%;
+    min-height: 65px;
+    float: left;
 }
 .post .lowerContainer > div.likeContainer {
-  width: 20%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  float: right;
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    float: right;
 }
 .post .likeBtn {
-  float: right;
+    float: right;
+}
+.post .likeBtn.nonLike:hover, .post .likeBtn.like:hover {
+    opacity: 0.7;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 .post .likeListBtn {
-  margin: 5px 0 0 0;
-  float: right;
-  text-decoration: none;
-  color: #757575;
+    margin: 5px 0 0 0;
+    float: right;
+    text-decoration: none;
+    color: #757575;
 }
-
+.post .likeListBtn:hover {
+    opacity: 0.7;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
 
 
 /*680px以下で適用する内容*/
 @media screen and (max-width:680px){
-  .post .lowerContainer > div.comment {
-    width: 75%;
-  }
-  .post .lowerContainer > div.likeContainer {
-    width: 25%;
-  }
+    .post .lowerContainer > div.comment {
+        width: 75%;
+    }
+    .post .lowerContainer > div.likeContainer {
+        width: 25%;
+    }
 }
 
 /*600px以下で適用する内容*/
 @media screen and (max-width:600px){
-  .post .lowerContainer {
-    overflow: unset;
-  }
-  .post .lowerContainer > div.comment {
-    width: 100%;
-    min-height: unset;
-    float: unset;
-  }
-  .post .lowerContainer > div.likeContainer {
-    height: 32px;
-    width: 100%;
-    margin: 2% 0 0 0;
-    float: unset;
-    position: unset;
-    right: unset;
-    bottom: unset;
-  }
-  .post .likeBtn {
-    float: right;
-  }
-  .post .likeListBtn {
-    margin: 0 10px 0 0;
-    float: right;
-    line-height: 32px;
-  }
+    .post .lowerContainer {
+        overflow: unset;
+    }
+    .post .lowerContainer > div.comment {
+        width: 100%;
+        min-height: unset;
+        float: unset;
+    }
+    .post .lowerContainer > div.likeContainer {
+        height: 32px;
+        width: 100%;
+        margin: 2% 0 0 0;
+        float: unset;
+        position: unset;
+        right: unset;
+        bottom: unset;
+    }
+    .post .likeBtn {
+        float: right;
+    }
+    .post .likeListBtn {
+        margin: 0 10px 0 0;
+        float: right;
+        line-height: 32px;
+    }
 }
 
 /*500px以下で適用する内容*/
 @media screen and (max-width:500px){
-  .post .name {
-    line-height: 30px;
-    font-size: 15px;
-  }
-  .post .deleteBtn {
-    padding: 3px;
-    font-size: 13px;
-  }
-  .post .trashIcon {
-    margin: 0 3px 1px 0;
-  }
+    .post .name {
+        line-height: 30px;
+        font-size: 15px;
+    }
+    .post .deleteBtn {
+        padding: 3px;
+        font-size: 13px;
+    }
+    .post .trashIcon {
+        margin: 0 3px 1px 0;
+    }
 }

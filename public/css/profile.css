@@ -25,6 +25,8 @@
 .profile .userIcon {
     width: 50%;
     max-width: 120px;
+    border: solid 1px #ebebeb;
+    border-radius: 10px;
 }
 .profile td.left {
     padding: 10px 0;

@@ -25,17 +25,17 @@
                                         <form action="/dislike" method="post">
                                             {{ csrf_field() }}
                                             <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                            <input class="likeBtn" type="image" src="/img/likeButton/star_yellow.png" alt="いいねボタン">
+                                            <input class="likeBtn like" type="image" src="/img/likeButton/star_yellow.png" alt="いいねボタン">
                                         </form>
                                     @else
                                         <form action="/like" method="post">
                                             {{ csrf_field() }}
                                             <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                            <input class="likeBtn" type="image" src="/img/likeButton/star_gray.png" alt="いいね（未）ボタン">
+                                            <input class="likeBtn nonLike" type="image" src="/img/likeButton/star_gray.png" alt="いいね（未）ボタン">
                                         </form>
                                     @endif
                                 @else
-                                    <img class="likeBtn" src="/img/likeButton/star_nonActive.png">
+                                    <img class="likeBtn nonActive" src="/img/likeButton/star_nonActive.png">
                                 @endif
                             </div>
                             <a class="likeListBtn" href="/like-list?id={{ $post->id }}" class="like_list">いいねしたユーザ</a>
