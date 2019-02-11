@@ -1,0 +1,87 @@
+/* 投稿がない場合のメッセージ */
+#none {
+    margin: 100px 0 0 0;
+    text-align: center;
+    line-height: 60px;
+    font-size: 23px;
+    font-weight: bold;
+    color: #484848;
+}
+
+
+.likeList {
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+.likeList .likeListContainer {
+    min-width: 300px;
+    margin: 0 10px;
+    padding: 4% 5%;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.likeList #userInfo {
+    width: 100%;
+    border-bottom: solid 1px #ddd;
+}
+.likeList #userInfo:last-child {
+    border-bottom: none;
+}
+.likeList td {
+    width: 50%;
+    text-align: center;
+}
+
+.likeList .userIcon {
+    width: 50%;
+    max-width: 120px;
+    border: solid 1px #ebebeb;
+    border-radius: 10px;
+}
+.likeList .userIcon:hover {
+    opacity: 0.7;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.likeList td.left {
+    padding: 10px 0;
+}
+
+.likeList .name {
+    font-size: 30px;
+    font-weight: bold;
+}
+.likeList .name a {
+    color: #484848;
+    text-decoration: none;
+}
+.likeList .name a:hover {
+    opacity: 0.7;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width:600px) {
+    .likeList .name {
+        font-size: 22.5px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .likeList td {
+        width: 25%;
+    }
+    .likeList .userIcon {
+        width: 70%;
+    }
+    .likeList .name {
+        font-size: 15px;
+    }
+}
+

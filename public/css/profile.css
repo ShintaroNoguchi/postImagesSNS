@@ -84,15 +84,6 @@
     max-height: 150%;
 }
 
-/*
-.profile .image {
-    width: 233px;
-    height: 233px;
-    object-fit: cover;
-    float: left;
-}
-*/
-
 @media screen and (max-width:600px) {
     .profile .name {
         font-size: 22.5px;
