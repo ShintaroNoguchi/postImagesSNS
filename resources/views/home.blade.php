@@ -11,7 +11,7 @@
                 <div class="postContainer">
                     <div class="upperContainer">
                         <div class="nameContainer"><a class="name" href="/profile?id={{ $post->user_id }}" class="user_name">{{ $post->getName() }}</a></div>
-                        @if(Auth::check())
+                        @if(Auth::check() && Auth::user()->id == $post->user_id)
                             <a class="deleteBtn" href="/delete?id={{ $post->id }}" class="delete_btn"><img class="trashIcon" src="/img/trash.png">投稿を削除</a>
                         @endif
                     </div>
