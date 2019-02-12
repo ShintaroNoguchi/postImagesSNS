@@ -11,7 +11,7 @@
                 {{ csrf_field() }}
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <div class="inputContainer first">
-                    <p class="title">画像</p>
+                    <p class="title">画像(jpg, png, gif)・動画(mp4)</p>
                     @if ($errors->has('image'))
                         <p class="error">{{ $errors->first('image') }}</p>
                     @endif

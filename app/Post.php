@@ -13,7 +13,7 @@ class Post extends Model
     public static $rules = array(
         'user_id' => 'required|integer|min:0',
         'comment' => 'nullable|max:200',
-        'image' => 'required|max:60000|mimetypes:image/gif,image/jpeg,image/png'
+        'image' => 'required|max:60000|mimetypes:image/gif,image/jpeg,image/png,video/mp4'
     );
 
     //投稿削除時のバリデーション

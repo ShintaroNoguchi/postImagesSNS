@@ -18,13 +18,11 @@ class PostController extends Controller
     //投稿処理
     public  function post(PostRequest $request)
     {
-        //バリデーション処理
-        //$this->validate($request, Post::$rules);
-
         //DBに投稿を保存
         $post = new Post;
         $post->user_id = $request->user_id;
         $post->comment = $request->comment;
+        $post->file_type = $request->image->getMimeType();
         $post->image = base64_encode(file_get_contents($request->image->getRealPath()));
         $post->save();
 

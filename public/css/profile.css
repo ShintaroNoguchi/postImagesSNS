@@ -73,7 +73,7 @@
     overflow: hidden;/*　画像が枠からはみ出た部分はトリミング（非表示）する　*/
     margin: 0 auto;
 }
-.profile .image img{
+.profile .image img, .profile .image video {
     /* 画像を上下左右に中央配置する（絶対指定） */
     position: absolute;
     top: 50%;

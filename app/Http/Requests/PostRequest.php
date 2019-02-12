@@ -36,7 +36,7 @@ class PostRequest extends FormRequest
         return [
             'image.required' => '画像を選択してください。',
             'image.max' => 'ファイルサイズが60MB以下の画像をアップロード可能です。',
-            'image.mimetypes' => '以下の形式の画像がアップロード可能です。：jpg, png, gif',
+            'image.mimetypes' => '以下の形式のファイルがアップロード可能です。：jpg, png, gif, mp4',
             'comment.max' => 'コメントは200文字まで入力可能です。',
         ];
     }
