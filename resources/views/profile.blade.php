@@ -18,9 +18,9 @@
                     <li>
                         <div class="image">
                             @if (strpos($post->file_type, 'image') !== false)
-                                <img src="data:{{ $post['file_type'] }};base64,{{ $post['image'] }}" alt="image">
+                                <img src="data:{{ $post['file_type'] }};base64,{{ $post['thumbnail'] }}" alt="image">
                             @else
-                                <video src="data:{{ $post['file_type'] }};base64,{{ $post['image'] }}"></video>
+                                <video src="data:{{ $post['file_type'] }};base64,{{ $post['thumbnail'] }}"></video>
                             @endif
                         </div>
                     </li>

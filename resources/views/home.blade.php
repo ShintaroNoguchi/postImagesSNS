@@ -16,9 +16,9 @@
                         @endif
                     </div>
                     @if (strpos($post->file_type, 'image') !== false)
-                        <img class="image" src="data:{{ $post->file_type }};base64,{{ $post->image }}">
+                        <img class="image" src="data:{{ $post->file_type }};base64,{{ $post->thumbnail }}">
                     @else
-                        <video class="image" src="data:{{ $post->file_type }};base64,{{ $post->image }}" controls></video>
+                        <video class="image" src="data:{{ $post->file_type }};base64,{{ $post->thumbnail }}" controls></video>
                     @endif
                     <div class="lowerContainer">
                         <div class="comment">{{ $post->comment }}</div>
