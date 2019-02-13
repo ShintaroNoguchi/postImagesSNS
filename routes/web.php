@@ -11,11 +11,6 @@
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
 
 //ログイン画面
 Route::get('/login', 'Auth\LoginController@index')->name('login');;
