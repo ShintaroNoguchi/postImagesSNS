@@ -57,11 +57,7 @@ class LoginController extends Controller
      */
     public function redirectToProvider()
     {
-
-        print('aaaa');
-        exit();
         return Socialite::driver('github')->scopes(['read:user', 'public_repo'])->redirect();
-
     }
 
     /**
