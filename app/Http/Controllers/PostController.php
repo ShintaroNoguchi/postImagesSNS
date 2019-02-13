@@ -7,6 +7,18 @@ use App\Post;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostRequest;
 
+use App\Video;
+use Carbon\Carbon;
+use FFMpeg;
+use FFMpeg\Coordinate\Dimension;
+use FFMpeg\Format\Video\X264;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+
+
 class PostController extends Controller
 {
     //投稿画面表示
@@ -29,11 +41,20 @@ class PostController extends Controller
             }
             else {
                 //サムネイル画像は元画像をそのまま使う
-                $thumb_binary = file_get_contents($request->image->getRealPath());
+                //$thumb_binary = file_get_contents($request->image->getRealPath());
             }
         }
         else {
-            $thumb_binary = file_get_contents($request->image->getRealPath()); //仮
+
+            $FFMpeg = FFMpeg::create([
+                'ffmpeg.binaries'  => 'C:/FFmpeg/bin/ffmpeg.exe', // the path to the FFMpeg binary
+                'ffprobe.binaries' => 'C:/FFmpeg/bin/ffprobe.exe', // the path to the FFProbe binary
+                'timeout'          => 3600, // the timeout for the underlying process
+                'ffmpeg.threads'   => 12,   // the number of threads that FFMpeg should use
+            ]);
+//            FFMpeg::fromDisk('videos')->open($request->image->getRealPath());
+
+            //$thumb_binary = file_get_contents($request->image->getRealPath()); //仮
         }
 
         //DBに投稿を保存
