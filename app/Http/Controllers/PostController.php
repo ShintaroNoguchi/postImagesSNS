@@ -45,10 +45,7 @@ class PostController extends Controller
             }
         }
         else {
-            //$media = FFMpeg::open($request->image->getRealPath());
-            //$thumb_binary = $media->getFrameFromString('00:00:00.00');
-
-            $thumb_binary = file_get_contents($request->image->getRealPath()); //仮
+            $thumb_binary = file_get_contents($request->image->getRealPath());
         }
 
         //DBに投稿を保存
