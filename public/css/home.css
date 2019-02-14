@@ -219,7 +219,7 @@ ul.pagination li.disabled {
         font-size: 30px;
     }
     .post .lowerContainer > div.likeContainer {
-        height: 32px;
+        height: 50px;
         width: 100%;
         margin: 2% 0 0 0;
         float: unset;
