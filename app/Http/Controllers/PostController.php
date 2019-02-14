@@ -54,6 +54,9 @@ class PostController extends Controller
                 ->toDisk('downloadable_videos')
                 ->inFormat(new \FFMpeg\Format\Video\X264)
                 ->save('video.mp4');
+
+            var_dump(Carbon::now());
+            exit();
             $thumb_binary = file_get_contents(Carbon::now());
             //$thumb_binary = file_get_contents($request->image->getRealPath()); //仮
         }
