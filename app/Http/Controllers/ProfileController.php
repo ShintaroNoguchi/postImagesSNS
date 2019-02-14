@@ -25,7 +25,7 @@ class ProfileController extends Controller
             'avatar_url' => $user->avatar_url,
             'name' => $user->name,
             'num_of_likes' => $num_of_likes,
-            'posts' => $user->posts()->orderBy('updated_at', 'asc')->get(['thumbnail', 'file_type']),
+            'posts' => $user->posts()->orderBy('updated_at', 'asc')->get(['id', 'thumbnail', 'file_type']),
         ];
 
         return view('profile', $param);

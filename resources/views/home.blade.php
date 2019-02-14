@@ -15,11 +15,13 @@
                             <a class="deleteBtn" href="/delete?id={{ $post->id }}" class="delete_btn"><img class="trashIcon" src="/img/trash.png">投稿を削除</a>
                         @endif
                     </div>
-                    @if (strpos($post->file_type, 'image') !== false)
-                        <img class="image" src="data:{{ $post->file_type }};base64,{{ $post->thumbnail }}">
-                    @else
-                        <video class="image" src="data:{{ $post->file_type }};base64,{{ $post->thumbnail }}" controls></video>
-                    @endif
+                    <a href="/show?id={{ $post->id }}" target="_blank">
+                        @if (strpos($post->file_type, 'image') !== false)
+                            <img class="image" src="data:{{ $post->file_type }};base64,{{ $post->thumbnail }}">
+                        @else
+                            <video class="image" src="data:{{ $post->file_type }};base64,{{ $post->thumbnail }}" controls></video>
+                        @endif
+                    </a>
                     <div class="lowerContainer">
                         <div class="comment">{{ $post->comment }}</div>
                         <div class="likeContainer">

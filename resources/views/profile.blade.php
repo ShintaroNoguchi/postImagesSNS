@@ -17,11 +17,13 @@
                 @foreach ($posts as $post)
                     <li>
                         <div class="image">
-                            @if (strpos($post->file_type, 'image') !== false)
-                                <img src="data:{{ $post['file_type'] }};base64,{{ $post['thumbnail'] }}" alt="image">
-                            @else
-                                <video src="data:{{ $post['file_type'] }};base64,{{ $post['thumbnail'] }}"></video>
-                            @endif
+                            <a href="/show?id={{ $post->id }}" target="_blank">
+                                @if (strpos($post->file_type, 'image') !== false)
+                                    <img src="data:{{ $post['file_type'] }};base64,{{ $post['thumbnail'] }}" alt="image">
+                                @else
+                                    <video src="data:{{ $post['file_type'] }};base64,{{ $post['thumbnail'] }}"></video>
+                                @endif
+                            </a>
                         </div>
                     </li>
                     @if ($loop->last)

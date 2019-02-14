@@ -40,3 +40,6 @@ Route::get('/profile', 'ProfileController@index');
 
 //いいねしたユーザ一覧画面
 Route::get('/like-list', 'LikeListController@index');
+
+//画像表示画面
+Route::get('/show', 'ShowController@index');
