@@ -45,19 +45,18 @@ class PostController extends Controller
             }
         }
         else {
+            ob_start();
             FFMpeg::fromDisk('videos')
                 ->open($request->image->getRealPath())
                 ->addFilter(function ($filters) {
                     $filters->resize(new \FFMpeg\Coordinate\Dimension(640, 480));
                 })
                 ->export()
-                ->toDisk('downloadable_videos')
+                ->toDisk('converted_videos')
                 ->inFormat(new \FFMpeg\Format\Video\X264)
                 ->save('video.mp4');
 
-            var_dump(Carbon::now());
-            exit();
-            $thumb_binary = file_get_contents(Carbon::now());
+            $thumb_binary = ob_get_clean();
             //$thumb_binary = file_get_contents($request->image->getRealPath()); //仮
         }
 
