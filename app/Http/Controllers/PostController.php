@@ -51,9 +51,9 @@ class PostController extends Controller
                     $filters->resize(new \FFMpeg\Coordinate\Dimension(640, 480));
                 })
                 ->export()
-                ->toDisk('converted_videos')
+                ->toDisk('downloadable_videos')
                 ->inFormat(new \FFMpeg\Format\Video\X264)
-                ->save('small_steve.mkv');
+                ->save('video.mp4');
             $thumb_binary = file_get_contents(Carbon::now());
             //$thumb_binary = file_get_contents($request->image->getRealPath()); //仮
         }
