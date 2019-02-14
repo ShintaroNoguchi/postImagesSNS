@@ -45,7 +45,7 @@ class PostController extends Controller
             }
         }
         else {
-            $thumb_video = FFMpeg::fromDisk('videos')
+            FFMpeg::fromDisk('videos')
                 ->open($request->image->getRealPath())
                 ->addFilter(function ($filters) {
                     $filters->resize(new \FFMpeg\Coordinate\Dimension(640, 480));
@@ -54,7 +54,7 @@ class PostController extends Controller
                 ->toDisk('converted_videos')
                 ->inFormat(new \FFMpeg\Format\Video\X264)
                 ->save('small_steve.mkv');
-            $thumb_binary = file_get_contents($thumb_video);
+            $thumb_binary = file_get_contents(Carbon::now());
             //$thumb_binary = file_get_contents($request->image->getRealPath()); //仮
         }
 
