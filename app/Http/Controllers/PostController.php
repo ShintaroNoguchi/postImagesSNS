@@ -45,18 +45,17 @@ class PostController extends Controller
             }
         }
         else {
-
-            /*
-            $FFMpeg = FFMpeg::create([
-                'ffmpeg.binaries'  => 'C:/FFmpeg/bin/ffmpeg.exe', // the path to the FFMpeg binary
-                'ffprobe.binaries' => 'C:/FFmpeg/bin/ffprobe.exe', // the path to the FFProbe binary
-                'timeout'          => 3600, // the timeout for the underlying process
-                'ffmpeg.threads'   => 12,   // the number of threads that FFMpeg should use
-            ]);
-            */
-//            FFMpeg::fromDisk('videos')->open($request->image->getRealPath());
-
-            $thumb_binary = file_get_contents($request->image->getRealPath()); //仮
+            $thumb_video = FFMpeg::fromDisk('videos')
+                ->open($request->image->getRealPath())
+                ->addFilter(function ($filters) {
+                    $filters->resize(new \FFMpeg\Coordinate\Dimension(640, 480));
+                })
+                ->export()
+                ->toDisk('converted_videos')
+                ->inFormat(new \FFMpeg\Format\Video\X264)
+                ->save('small_steve.mkv');
+            $thumb_binary = file_get_contents($thumb_video);
+            //$thumb_binary = file_get_contents($request->image->getRealPath()); //仮
         }
 
         //DBに投稿を保存

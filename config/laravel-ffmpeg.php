@@ -13,4 +13,8 @@ return [
     ],
 
     'timeout' => 3600,
+
+    'ffmpeg.binaries' => '/app/vendor/ffmpeg/ffmpeg',
+
+    'ffprobe.binaries' => '/app/vendor/ffmpeg/ffprobe',
 ];
