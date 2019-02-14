@@ -45,6 +45,9 @@ class PostController extends Controller
             }
         }
         else {
+            var_dump('aaa');
+            exit();
+
             $media = FFMpeg::open($request->image->getRealPath());
             $thumb_binary = $media->getFrameFromString('00:00:00.00');
 
