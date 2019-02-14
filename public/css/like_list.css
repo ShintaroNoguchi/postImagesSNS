@@ -67,21 +67,20 @@
     transition: 0.3s ease-in-out;
 }
 
-@media screen and (max-width:600px) {
-    .likeList .name {
-        font-size: 22.5px;
-    }
-}
 
-@media screen and (max-width:450px) {
+/* スマホ表示 */
+@media screen and (max-width:750px){
+    #none {
+        font-size: 40px;
+    }
     .likeList td {
         width: 25%;
     }
     .likeList .userIcon {
-        width: 70%;
+        width: 75%;
     }
-    .likeList .name {
-        font-size: 15px;
+    .likeList .name a {
+        font-size: 35px;
     }
 }
 

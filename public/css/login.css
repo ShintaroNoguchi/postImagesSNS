@@ -18,10 +18,6 @@ body {
     background: #fff;
 }
 
-.loginBtnContainer {
-
-}
-
 .loginBtn {
     padding: 5px 15px;
     border-radius: 12px;
@@ -38,4 +34,16 @@ body {
     -moz-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
+}
+
+
+/* スマホ表示 */
+@media screen and (max-width:750px) {
+    #content {
+        padding: 55px 4% 0 4%;
+    }
+    .loginBtn {
+        padding: 15px 30px;
+        font-size: 40px;
+    }
 }

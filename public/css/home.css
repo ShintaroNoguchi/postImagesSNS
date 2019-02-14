@@ -136,7 +136,9 @@ ul.pagination li.disabled {
 }
 
 
+
 /*680px以下で適用する内容*/
+/*
 @media screen and (max-width:680px){
     .post .lowerContainer > div.comment {
         width: 75%;
@@ -144,9 +146,10 @@ ul.pagination li.disabled {
     .post .lowerContainer > div.likeContainer {
         width: 25%;
     }
-}
+}*/
 
 /*600px以下で適用する内容*/
+/*
 @media screen and (max-width:600px){
     .post .lowerContainer {
         overflow: unset;
@@ -173,9 +176,10 @@ ul.pagination li.disabled {
         float: right;
         line-height: 32px;
     }
-}
+}*/
 
 /*500px以下で適用する内容*/
+/*
 @media screen and (max-width:500px){
     .post .name {
         line-height: 30px;
@@ -187,5 +191,50 @@ ul.pagination li.disabled {
     }
     .post .trashIcon {
         margin: 0 3px 1px 0;
+    }
+}
+*/
+
+/* スマホ表示 */
+@media screen and (max-width:750px) {
+    .post .name {
+        line-height: 55px;
+        font-size: 40px;
+    }
+    .post .deleteBtn {
+        font-size: 30px;
+    }
+    .post .trashIcon {
+        height: 30px;
+        margin: 5px 3px 13px 0;
+    }
+
+    .post .lowerContainer {
+        overflow: unset;
+    }
+    .post .lowerContainer > div.comment {
+        width: 100%;
+        min-height: unset;
+        float: unset;
+        font-size: 30px;
+    }
+    .post .lowerContainer > div.likeContainer {
+        height: 32px;
+        width: 100%;
+        margin: 2% 0 0 0;
+        float: unset;
+        position: unset;
+        right: unset;
+        bottom: unset;
+    }
+    .post .likeBtn {
+        float: right;
+        height: 50px;
+    }
+    .post .likeListBtn {
+        margin: 13px 20px 5px 0;
+        float: right;
+        line-height: 32px;
+        font-size: 25px;
     }
 }

@@ -38,8 +38,29 @@
 }
 
 
-@media screen and (max-width:500px) {
+/* スマホ表示 */
+@media screen and (max-width:750px) {
+    .form .title {
+        margin: 0 0 12px 0;
+        font-size: 30px;
+    }
+    .form .inputContainer:not(.first) {
+        margin: 50px 0 0 0;
+    }
+
+    .form-control {
+        height: 80px;
+        line-height: 66px;
+        font-size: 25px;
+    }
     .form .comment {
-        height: 300px;
+        height: 550px;
+        font-size: 30px;
+    }
+
+    .form .submitBtn {
+        height: 60px;
+        width: 150px;
+        font-size: 25px;
     }
 }

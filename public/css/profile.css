@@ -86,6 +86,7 @@
     max-height: 150%;
 }
 
+/*
 @media screen and (max-width:600px) {
     .profile .name {
         font-size: 22.5px;
@@ -101,10 +102,10 @@
 
 @media screen and (max-width:500px) {
     .profile .name {
-        font-size: 15px;
+        font-size: 35px;
     }
     .profile .numOfLikes {
-        font-size: 10px;
+        font-size: 30px;
     }
 }
 
@@ -114,5 +115,25 @@
     }
     .profile .image.dummy {
         display: none;
+    }
+}
+*/
+
+
+/* スマホ表示 */
+@media screen and (max-width:750px) {
+    .profile .userIcon {
+        max-width: 150px;
+    }
+
+    .profile .name {
+        font-size: 35px;
+    }
+    .profile .numOfLikes {
+        font-size: 30px;
+    }
+
+    .profile li{
+        width: 50%;
     }
 }

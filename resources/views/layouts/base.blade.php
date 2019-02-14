@@ -2,6 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        @if(Agent::isTablet())
+            <meta name="viewport" content="width=850">
+        @elseif(Agent::isMobile())
+            <meta name="viewport" content="width=750">
+        @endif
         <title>SNS</title>
 
         <!-- Fonts -->
