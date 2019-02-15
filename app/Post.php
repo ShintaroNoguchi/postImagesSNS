@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Post extends Model
 {
@@ -43,7 +44,7 @@ class Post extends Model
         $own_like = 0;
 
         foreach ($this->likes as $like) {
-            if ($like['user_id'] == $this->user_id) {
+            if ($like['user_id'] == Auth::user()->id) {
                 $own_like = 1;
                 break;
             }
@@ -53,14 +54,6 @@ class Post extends Model
         else return false;
     }
 
-    public function getInfo() {
-        $output = '';
-        foreach ($this->likes as $like) {
-            $output .= $like['user_id'] . ' ';
-        }
-
-        return $output;
-    }
 
     //その投稿に対するいいねの数を返す関数
     public function countLikes() {
