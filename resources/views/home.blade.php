@@ -27,6 +27,8 @@
                         <div class="likeContainer">
                             <div>
                                 @if(Auth::check())
+                                    <p>{{ $post->getInfo() }}</p>
+                                    <p>{{ $post->user_id }}</p>
                                     @if($post->isLiked())
                                         <form action="/dislike" method="post">
                                             {{ csrf_field() }}

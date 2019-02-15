@@ -53,6 +53,15 @@ class Post extends Model
         else return false;
     }
 
+    public function getInfo() {
+        $output = '';
+        foreach ($this->likes as $like) {
+            $output .= $like['user_id'] . ' ';
+        }
+
+        return $output;
+    }
+
     //その投稿に対するいいねの数を返す関数
     public function countLikes() {
         return $this->likes()->count();
