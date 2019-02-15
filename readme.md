@@ -56,6 +56,12 @@ DBに保存する際は元画像とサムネイル画像をどっちも保存し
 動画のリサイズはFFmpegを用いる予定だったので、インストールはしてあります。
 また、FFmpegをLaravelで動作させるために、Laravel-FFMpegもインストール済みです。
 
+FFmpeg
+https://ffmpeg.org/
+
+Laravel-FFMpeg
+https://github.com/pascalbaljetmedia/laravel-ffmpeg
+
 ###　元画像の表示
 ホーム画面、プロフィール画面で表示される画像は全てリサイズされているので、元画像を表示できるページをつくりました。
 サムネイル画像をクリックすると、別タブで元画像のみ読み込まれます。
