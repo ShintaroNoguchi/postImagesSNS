@@ -12,7 +12,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        DB::delete('delete from likes');
         $posts = Post::orderBy('updated_at', 'desc')->simplePaginate(10);
 
         return view('home', ['posts' => $posts]);
